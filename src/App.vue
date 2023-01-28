@@ -13,9 +13,10 @@ const welAudioRef = ref<HTMLAudioElement | undefined>()
 const curLevel = ref(1)
 const showTip = ref(false)
 const LevelConfig = [
-  { cardNum: 6, layerNum: 2, trap: false },
-  { cardNum: 20, layerNum: 8, trap: false },
-  { cardNum: 22, layerNum: 10, trap: false },
+  { cardNum: 4, layerNum: 1, trap: false },
+  { cardNum: 16, layerNum: 6, trap: false },
+  { cardNum: 18, layerNum: 8, trap: false },
+  { cardNum: 18, layerNum: 10, trap: false },
 ]
 
 const isWin = ref(false)
@@ -33,9 +34,9 @@ const {
   initData,
 } = useGame({
   container: containerRef,
-  cardNum: 3,
-  layerNum: 2,
-  trap: true,
+  cardNum: 4,
+  layerNum: 1,
+  trap: false,
   events: {
     clickCallback: handleClickCard,
     dropCallback: handleDropCard,
@@ -155,11 +156,11 @@ onMounted(() => {
     </div>
 
     <div h-50px flex items-center w-full justify-center>
-      <button :disabled="removeFlag" mr-10px @click="handleRemove">
-        移出前三个
+      <button h-42px :disabled="removeFlag" mr-10px @click="handleRemove">
+        <img src="/src/assets/output.png" width="28" height="28" border="0" alt="remove"/>
       </button>
-      <button :disabled="backFlag" @click="handleBack">
-        回退
+      <button h-42px :disabled="backFlag" @click="handleBack">
+        <img src="/src/assets/rotate.png" width="28" height="28" border="0" alt="back"/>
       </button>
     </div>
     <!--<div w-full color="#000" fw-600 text-center pb-10px>
