@@ -18,7 +18,7 @@ export function useGame(config: GameConfig): Game {
   const indexSet = new Set()
   let perFloorNodes: CardNode[] = []
   const selectedNodes = ref<CardNode[]>([])
-  const size = 40
+  const size = 50
   let floorList: number[][] = []
 
   function updateState() {
@@ -97,7 +97,7 @@ export function useGame(config: GameConfig): Game {
   }
 
   function handleRemove() {
-  // 从selectedNodes.value中取出3个 到 removeList.value中
+    // 从selectedNodes.value中取出3个 到 removeList.value中
 
     if (selectedNodes.value.length < 3)
       return
@@ -149,7 +149,7 @@ export function useGame(config: GameConfig): Game {
       len += floorNum
       floorIndex++
     }
-    const containerWidth = container.value!.clientWidth
+    const containerWidth = container.value!.clientWidth - 50
     const containerHeight = container.value!.clientHeight
     const width = containerWidth / 2
     const height = containerHeight / 2 - 60
@@ -168,12 +168,12 @@ export function useGame(config: GameConfig): Game {
           id: `${index}-${i}`,
           type: k,
           zIndex:
-        index,
+            index,
           index: i,
           row,
           column,
           top: height + (size * row - (size / 2) * index),
-          left: width + (size * column - (size / 2) * index),
+          left: 25+width + (size * column - (size / 2) * index),
           parents: [],
           state: 0,
         }

@@ -14,9 +14,9 @@ const curLevel = ref(1)
 const showTip = ref(false)
 const LevelConfig = [
   { cardNum: 4, layerNum: 1, trap: false },
-  { cardNum: 16, layerNum: 6, trap: false },
-  { cardNum: 18, layerNum: 8, trap: false },
-  { cardNum: 18, layerNum: 10, trap: false },
+  { cardNum: 16, layerNum: 3, trap: false },
+  { cardNum: 18, layerNum: 3, trap: false },
+  { cardNum: 20, layerNum: 2, trap: false },
 ]
 
 const isWin = ref(false)
@@ -142,7 +142,7 @@ onMounted(() => {
       />
     </div>
     <div w-full flex items-center justify-center>
-      <div border="~ 4px dashed #000" w-295px h-44px flex>
+      <div border="~ 4px dashed #000" w-350px h-52px flex>
         <template v-for="item in selectedNodes" :key="item.id">
           <transition name="bounce">
             <Card
@@ -155,7 +155,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <div h-50px flex items-center w-full justify-center>
+    <div h-50px flex items-center w-full justify-center mt-5px mb-10px>
       <button h-42px :disabled="removeFlag" mr-10px @click="handleRemove">
         <img src="/src/assets/output.png" width="28" height="28" border="0" alt="remove"/>
       </button>
