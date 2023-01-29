@@ -8,5 +8,5 @@ export default defineConfig({
     vue(),
     Unocss(),
   ],
-  base: process.env.NODE_ENV === 'production' ? `/${process.env.SUB_PATH}` : '/',
+  base: process.env.NODE_ENV === 'production' ? `/${process.env.SUB_PATH || ''}` : '/',
 })
