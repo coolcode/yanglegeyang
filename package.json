@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "fm && vue-tsc --noEmit && vite build",
+    "fm": "fm",
+    "build": "export SUB_PATH=yanglegeyang && vue-tsc --noEmit && vite build",
+    "prod": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
