@@ -4,6 +4,7 @@
 set -e
 
 # build
+export SUB_PATH=yanglegeyang
 yarn run build
 
 # navigate into the build output directory
